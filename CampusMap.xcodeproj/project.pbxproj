@@ -19,6 +19,8 @@
 		34B639CB21ACD224009562B8 /* CampusPOI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34B639CA21ACD224009562B8 /* CampusPOI.plist */; };
 		34B639CD21ACD325009562B8 /* POIAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B639CC21ACD325009562B8 /* POIAnnotation.swift */; };
 		34B639CF21ACD3B5009562B8 /* POIAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B639CE21ACD3B5009562B8 /* POIAnnotationView.swift */; };
+		4EB373B621E64CAD001B4B80 /* LibraryToCSRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EB373B521E64CAD001B4B80 /* LibraryToCSRoute.plist */; };
+		4EB373B821E6509C001B4B80 /* GymToRestraurantRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EB373B721E6509C001B4B80 /* GymToRestraurantRoute.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		34B639CA21ACD224009562B8 /* CampusPOI.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CampusPOI.plist; sourceTree = "<group>"; };
 		34B639CC21ACD325009562B8 /* POIAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIAnnotation.swift; sourceTree = "<group>"; };
 		34B639CE21ACD3B5009562B8 /* POIAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIAnnotationView.swift; sourceTree = "<group>"; };
+		4EB373B521E64CAD001B4B80 /* LibraryToCSRoute.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LibraryToCSRoute.plist; sourceTree = "<group>"; };
+		4EB373B721E6509C001B4B80 /* GymToRestraurantRoute.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GymToRestraurantRoute.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 			children = (
 				34B639C221ACCB2D009562B8 /* Campus.plist */,
 				34B639CA21ACD224009562B8 /* CampusPOI.plist */,
+				4EB373B521E64CAD001B4B80 /* LibraryToCSRoute.plist */,
+				4EB373B721E6509C001B4B80 /* GymToRestraurantRoute.plist */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -152,10 +158,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				34B639CB21ACD224009562B8 /* CampusPOI.plist in Resources */,
+				4EB373B821E6509C001B4B80 /* GymToRestraurantRoute.plist in Resources */,
 				342EBE1021AC3BE500DB96CA /* LaunchScreen.storyboard in Resources */,
 				342EBE0D21AC3BE500DB96CA /* Assets.xcassets in Resources */,
 				342EBE0B21AC3BE400DB96CA /* Main.storyboard in Resources */,
 				34B639C321ACCB2D009562B8 /* Campus.plist in Resources */,
+				4EB373B621E64CAD001B4B80 /* LibraryToCSRoute.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +326,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NJ94DKRM2W;
 				INFOPLIST_FILE = CampusMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -326,6 +336,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = info.nemoworks.CampusMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -335,7 +346,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NJ94DKRM2W;
 				INFOPLIST_FILE = CampusMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -343,6 +356,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = info.nemoworks.CampusMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

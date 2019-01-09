@@ -126,7 +126,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bl6-Iv-pD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="s8Z-sW-vzx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1858" y="86"/>
+            <point key="canvasLocation" x="1855" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Svw-Dk-qf6">
@@ -144,7 +144,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rvz-i3-2Ql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="790.25487256371821"/>
+            <point key="canvasLocation" x="322" y="132"/>
         </scene>
     </scenes>
 </document>

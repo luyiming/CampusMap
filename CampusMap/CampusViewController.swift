@@ -29,6 +29,7 @@ class CampusViewController: UIViewController {
         
         mapView.region = region
         
+        print("view did load")
         
     }
     
@@ -48,23 +49,19 @@ class CampusViewController: UIViewController {
                 self.addPOIs()
             case .mapBoundary:
                 self.addBoundary()
+            case .mapLibraryToCSRoute:
+                self.addLibraryToCSRoute()
+            case .mapGymToRestraurantRoute:
+                self.addGymToRestraurantRoute()
             }
         }
     }
-    
     
     @IBAction func closeOptions(_ exitSegue: UIStoryboardSegue) {
         guard let vc = exitSegue.source as? MapOptionsViewController else { return }
         selectedOptions = vc.selectedOptions
         loadSelectedOptions()
     }
-    
-    
-    //    func addOverlay() {
-    //        let overlay = ParkMapOverlay(park: park)
-    //        mapView.addOverlay(overlay)
-    //    }
-    //
     
     func addBoundary() {
         mapView.addOverlay(MKPolygon(coordinates: campus.boundary, count: campus.boundary.count))
@@ -84,20 +81,29 @@ class CampusViewController: UIViewController {
         }
     }
     
+    func addLibraryToCSRoute() {
+        guard let points = Campus.plist("LibraryToCSRoute") as? [String] else { return }
+        
+        let cgPoints = points.map { NSCoder.cgPoint(for: $0) }
+        let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
+        let routeLine = MKPolyline(coordinates: coords, count: coords.count)
+        
+        mapView.addOverlay(routeLine)
+    }
+    
+    func addGymToRestraurantRoute() {
+        guard let points = Campus.plist("GymToRestraurantRoute") as? [String] else { return }
+        
+        let cgPoints = points.map { NSCoder.cgPoint(for: $0) }
+        let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
+        let routeLine = MKPolyline(coordinates: coords, count: coords.count)
+        
+        mapView.addOverlay(routeLine)
+    }
+    
     @IBAction func mapTypeChanged(_ sender: UISegmentedControl) {
         mapView.mapType = MKMapType.init(rawValue: UInt(sender.selectedSegmentIndex)) ?? .standard
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 
@@ -107,7 +113,8 @@ extension CampusViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
        if overlay is MKPolyline {
             let lineView = MKPolylineRenderer(overlay: overlay)
-            lineView.strokeColor = UIColor.green
+            lineView.strokeColor = UIColor.magenta
+            lineView.lineWidth = CGFloat(2.0)
             return lineView
         } else if overlay is MKPolygon {
             let polygonView = MKPolygonRenderer(overlay: overlay)

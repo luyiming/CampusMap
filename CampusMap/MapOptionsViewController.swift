@@ -12,6 +12,8 @@ import UIKit
 enum MapOptionsType: Int {
     case mapBoundary = 0
     case mapPOIs
+    case mapLibraryToCSRoute
+    case mapGymToRestraurantRoute
     
     func displayName() -> String {
         switch (self) {
@@ -19,6 +21,10 @@ enum MapOptionsType: Int {
             return "校园边界"
         case .mapPOIs:
             return "兴趣点"
+        case .mapLibraryToCSRoute:
+            return "图书馆到计算机系楼导航"
+        case .mapGymToRestraurantRoute:
+            return "体育馆到食堂导航"
         }
     }
 }
@@ -56,7 +62,7 @@ extension MapOptionsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
